@@ -1,0 +1,40 @@
+---
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} | UTARMP デモ` : "UTARMP デモ"}</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; color: #1e293b; background: #f8fafc; line-height: 1.8; }
+      .wrap { max-width: 720px; margin: 0 auto; padding: 24px 20px 80px; }
+      header.site { border-bottom: 1px solid #e2e8f0; background: #fff; }
+      header.site .wrap { padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
+      a { color: #0f172a; }
+      .brand { font-weight: 700; text-decoration: none; }
+      .tag { font-size: 12px; color: #64748b; }
+      article img, .body img { max-width: 100%; height: auto; border-radius: 8px; }
+      h1 { font-size: 1.6rem; }
+      time { color: #64748b; font-size: 14px; }
+      .card { display: block; padding: 16px 0; border-bottom: 1px solid #e2e8f0; text-decoration: none; color: inherit; }
+      .card h2 { margin: 0 0 4px; font-size: 1.1rem; }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap">
+        <a href="/" class="brand">UTARMP デモ</a>
+        <span class="tag">検証用メディア</span>
+      </div>
+    </header>
+    <main class="wrap">
+      <slot />
+    </main>
+  </body>
+</html>
